@@ -1,0 +1,79 @@
+script#checkboxTemplate(type="text/html")
+  label(data-bind="attr: {for: id}, text: title[ $root.currentLocale() ]")
+  div(data-bind="if: isInline() == false")
+    div(data-bind="foreach: options")
+      .checkbox
+        label.no-event
+          input(type="checkbox" data-bind="value: value")
+          span(data-bind="text: name[ $root.currentLocale() ]")
+  div(data-bind="if: isInline() == true")
+    div(data-bind="foreach: options")
+      label.checkbox-inline.no-event
+        input(type="checkbox" data-bind="value: value")
+        span(data-bind="text: name[ $root.currentLocale() ]")
+  a.settings(data-bind="popover: {options: { title: 'Edit', placement: 'right', container: 'body', template: popoverTemplate() }, template: 'editCheckboxTemplate', data: $data, templateOptions: { afterRender: $data.buffer } }" href="javascript:void(0)")
+    = 'Edit'
+
+script#editCheckboxTemplate(type="text/html")
+  .form-horizontal.col-2
+    .form-group
+      label.col-xs-4(for="checkboxID")
+        = 'ID / Name'
+      .col-xs-8
+        .row
+          .col-xs-6
+            input#checkboxID.form-control.input-sm(type="text" autofocus="true" data-bind="value: id")
+          .col-xs-6
+            input#checkboxName.form-control.input-sm(type="text" data-bind="value: name")
+
+    .panel.panel-default
+      .panel-heading(data-bind="visible: $root.isLocales()")
+        .form-group.mbn
+          label.col-xs-4(for="local")
+            = 'Locale'
+          .col-xs-8
+            select.selectpicker.form-control(data-bind="options: $root.locales, value: locale")
+      .panel-body
+        .form-group
+          label.col-xs-4(for="checkboxTitle")
+            = 'Locale'
+          .col-xs-8
+            input#checkboxTitle.form-control.input-sm(type="text" data-bind="value: title[ $data.locale() ]")
+        .form-group.mbn
+          .col-xs-6
+            label(for="checkboxOptions")
+              = 'Options'
+            div(data-bind="sortable: {data: options, options: { handle: '.handle'}}")
+              .mbm.input-group.input-group-sm
+                span.input-group-addon.handle
+                  i.glyphicon.glyphicon-move
+                input.form-control(data-bind="value: name[ $parent.locale() ]")
+                a.input-group-addon(data-bind="click: $parent.removeOption, clickBubble: false" href="#")
+                  i.glyphicon.glyphicon-remove
+            .text-left
+              a.btn.btn-info.btn-sm(data-bind="click: addOption")
+                = 'add option'
+          .col-xs-6
+            label(for="selectValues")
+              = 'Value'
+            div(data-bind="foreach: options")
+              input.form-control.input-sm.mbm(data-bind="value: value")
+
+    .form-group.mbn
+      .col-xs-6.checkbox
+        label(for="checkboxIsInline")
+          input#checkboxIsInline(type="checkbox" data-bind="checked: isInline")
+          = 'Inline'
+      .col-xs-6.text-right
+        button.btn.btn-danger.btn-sm(data-bind="click: $parents[ 2 ].removeItem")
+          = 'delete'
+          i.glyphicon.glyphicon-remove
+
+    hr
+    .form-group.mbn
+      .col-xs-6
+        button.btn.btn-success(type="button" data-dismiss="popover" onclick="popoverHide()" )
+          = 'Save'
+      .col-xs-6.text-right
+        a.btn.btn-warning(data-bind="click: $parents[ 2 ].cancelChange")
+          = 'Cancel'

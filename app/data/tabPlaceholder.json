@@ -1,0 +1,48 @@
+[
+  {
+    "type": "tab",
+    "id": "inputRow",
+    "title": "Placeholder",
+    "content": [
+      {
+        "type": "placeholder",
+        "template": "placeholderTemplate",
+        "contentLeft": [
+
+        ],
+        "contentRight": [
+
+        ],
+        "leftClass": "col-xs-4",
+        "rightClass": "col-xs-8",
+        "ratio": "4:8"
+      },
+      {
+        "type": "placeholder",
+        "template": "placeholderTemplate",
+        "contentLeft": [
+
+        ],
+        "contentRight": [
+
+        ],
+        "leftClass": "col-xs-6",
+        "rightClass": "col-xs-6",
+        "ratio": "6:6"
+      },
+      {
+        "type": "placeholder",
+        "template": "placeholderTemplate",
+        "contentLeft": [
+
+        ],
+        "contentRight": [
+
+        ],
+        "leftClass": "col-xs-8",
+        "rightClass": "col-xs-4",
+        "ratio": "8:4"
+      }
+    ]
+  }
+]

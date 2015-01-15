@@ -1,0 +1,68 @@
+script#inputTemplate(type="text/html")
+    label(data-bind="attr: {for: id}, text: title[ $root.currentLocale() ]")
+    .form-group.mbn
+        div(data-bind="css: {'input-group': icon().is() }")
+            span.input-group-addon(data-bind="visible: icon().is(), html: icon().image()")
+            input.form-control.no-event(type="text" data-bind="attr: {id: id, placeholder: placeholder[ $root.currentLocale() ]}")
+        span.help-block.mbn(data-bind="text: helpText[ $root.currentLocale() ]")
+    a.settings(data-bind="popover: {options: { title: 'Edit', placement: 'right', container: 'body', template: popoverTemplate() }, template: 'editInputTemplate', templateOptions: {afterRender: $data.buffer }, data: $data }" href="javascript:void(0);")
+        = 'Edit'
+
+script#editInputTemplate(type="text/html")
+    .form-horizontal
+        .form-group
+            label.col-xs-4(for="inputID")
+                = 'ID'
+            .col-xs-8
+                input#inputID.form-control.input-sm(type="text" autofocus="" data-bind="value: id")
+        .form-group
+            label.col-xs-4(for="inputName")
+                = 'Name'
+            .col-xs-8
+                input#inputName.form-control.input-sm(type="text" data-bind="value: name")
+        .panel.panel-default
+            .panel-heading(data-bind="visible: $root.isLocales()")
+                .form-group.mbn
+                    label.col-xs-4(for="local")
+                        = 'Locale'
+                    .col-xs-8
+                        select.selectpicker.form-control(data-bind="options: $root.locales, value: locale")
+            .panel-body
+                .form-group
+                    label.col-xs-4(for="inputTitle")
+                        = 'Title'
+                    .col-xs-8
+                        input#inputTitle.form-control.input-sm(type="text" data-bind="value: title[ $data.locale() ]")
+                .form-group
+                    label.col-xs-4(for="inputPlaceholder")
+                        = 'Placeholder'
+                    .col-xs-8
+                        input#inputPlaceholder.form-control.input-sm(type="text" data-bind="value: placeholder[ $data.locale() ]")
+                .form-group.mbn
+                    label.col-xs-4(for="inputHelp")
+                        = 'Help'
+                    .col-xs-8
+                        input#inputHelp.form-control.input-sm(type="text" data-bind="value: helpText[ $data.locale() ]")
+        .form-group
+            label.col-xs-4(for="icon")
+                = 'Icon'
+            .col-xs-8
+                select.selectpicker.form-control(data-bind="foreach: $root.icons, value: icon")
+                    option(data-bind="text: name, value: $data, attr: {'data-content': content()}")
+        .form-group
+            .col-xs-6.checkbox
+                label(for="inputRequired")
+                    input#inputRequired(type="checkbox" data-bind="checked: required")
+                    = 'Required'
+            .col-xs-6.text-right
+                button.btn.btn-danger.btn-sm(data-bind="click: $parents[ 2 ].removeItem")
+                    = 'delete'
+                    i.glyphicon.glyphicon-remove
+        hr
+        .form-group.mbn
+            .col-xs-6
+                button.btn.btn-success(type="button" data-dismiss="popover" onclick="popoverHide()" )
+                    = 'Save'
+            .col-xs-6.text-right
+                a.btn.btn-warning(data-bind="click: $parents[ 2 ].cancelChange")
+                    = 'Cancel'

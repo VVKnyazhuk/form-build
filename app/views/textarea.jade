@@ -1,0 +1,9 @@
+script#textareaTemplate(type="text/html")
+    label(data-bind="attr: {for: id}, text: title[ $root.currentLocale() ]")
+    .form-group.mbn
+        div(data-bind="css: {'input-group': icon().is() }")
+            span.input-group-addon(data-bind="visible: icon().is(), html: icon().image()")
+            textarea.form-control.no-event(data-bind="attr: {id: id, placeholder: placeholder[ $root.currentLocale() ]}")
+        span.help-block.mbn(data-bind="text: helpText[ $root.currentLocale() ]")
+    a.settings(data-bind="popover: {options: { title: 'Edit', placement: 'right', container: 'body', template: popoverTemplate() }, template: 'editInputTemplate', data: $data, templateOptions: { afterRender:  $data.buffer } }" href="javascript:void(0);")
+        = 'Edit'

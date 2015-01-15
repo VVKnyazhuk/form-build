@@ -1,0 +1,14 @@
+{
+  "name": "form-build",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jade": "^0.10.0",
+    "gulp-requirejs-optimize": "^0.1.1",
+    "gulp-concat-css": "^1.1.1",
+    "gulp-uglify": "^1.0.2"
+  },
+  "dependencies": {
+    "gulp-uglifycss": "^1.0.4"
+  }
+}

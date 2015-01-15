@@ -1,0 +1,47 @@
+.form-inputs
+   .row
+      .col-xs-12.mbl(data-bind="visible: $root.isLocales()")
+         .btn-group(data-bind="foreach: $root.locales" data-toggle="buttons")
+            label.btn.btn-info(data-bind="click: $root.changeLocale, css: {active: $data == $root.currentLocale()}")
+               input(name="locales" type="radio")
+               span(data-bind="text: $data")
+      .col-xs-6
+         .tabs-top
+            // Nav tabs
+            ul.nav.nav-tabs
+               // ko foreach: confTabs
+               li(data-bind="css: {active: $root.confSelectTab() === $data}")
+                  a(data-bind="click: $root.confSelectTab, attr: {href: '#'+id()}" href="#")
+                     span.d-ib.mrs(data-bind="visible: icon().is(), html: icon().image()")
+                     span.title(data-bind="text: title[ $root.currentLocale() ]")
+                     span.btn.btn-info.btn-xs.pull-right.mlm
+                        i.glyphicon.glyphicon-edit(data-bind="popover: {options: {title: 'Edit', placement: 'right', container: 'body', template: popoverTemplate() }, template: 'editTabTemplate', data: $data, templateOptions: { afterRender: $data.buffer } }")
+               // /ko
+               li
+                  a.bg-success(data-bind="click: settingsTab.visibleNew.bind($root, true)" href="#")
+                     span.btn.btn-xs
+                        i.glyphicon.glyphicon-plus
+            // Tab panes
+            #formBuild.tab-content.mtl(data-bind="foreach: confTabs")
+               .tab-panel(data-bind="css: {active: $root.confSelectTab() === $data}, attr:{id: id}, sortable: {data: content}")
+                  .component.panel.panel-default
+                     span.handler
+                        i.glyphicon.glyphicon-move
+                     .panel-body(data-bind="template: {name: template, data: $data}")
+      .col-xs-6
+         // Nav tabs
+         ul.nav.nav-tabs(data-bind="foreach: componentsTabs")
+            li(data-bind="css: {active: $root.compSelectTab() === $data}")
+               a(data-bind="click: $root.compSelectTab, attr: {href: '#'+id()}" href="#")
+                  span(data-bind="text: title[ $root.currentLocale() ]")
+         // Tab panes
+         #components.tab-content.mtl(data-bind="foreach: componentsTabs")
+            .tab-panel(data-bind="css: {active: $root.compSelectTab() === $data}, attr:{id: id}, foreach: content")
+               .component.panel.panel-default(data-bind="draggable: {data:  $data}")
+                  span.handler
+                     i.glyphicon.glyphicon-move
+                  .panel-body(data-bind="template: {name: template, data: $data }")
+   .row.mtl
+      .col-xs-12
+         .form-group
+            textarea.form-control(data-bind="value: save()" rows="5")

@@ -1,0 +1,508 @@
+/*
+    custom inclusion of right, left and below tabs
+*/
+
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+    border-bottom: 0;
+}
+
+.tab-content > .tab-panel,
+.pill-content > .pill-panel {
+    display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+    display: block;
+}
+
+.tabs-below > .nav-tabs {
+    border-top: 1px solid #ddd;
+}
+
+.tabs-below > .nav-tabs > li {
+    margin-top: -1px;
+    margin-bottom: 0;
+}
+
+.tabs-below > .nav-tabs > li > a {
+    border-radius: 0 0 4px 4px;
+}
+
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+    border-top-color: #ddd;
+    border-bottom-color: transparent;
+}
+
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+    border-color: transparent #ddd #ddd #ddd;
+}
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+    float: none;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+    min-width: 74px;
+    margin-right: 0;
+    margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+    float: left;
+    margin-right: 19px;
+    border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+    margin-right: -1px;
+    border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+    border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+    border-color: #ddd transparent #ddd #ddd;
+}
+
+.tabs-right > .nav-tabs {
+    float: right;
+    margin-left: 19px;
+    border-left: 1px solid #ddd;
+}
+
+.tabs-right > .nav-tabs > li > a {
+    margin-left: -1px;
+    border-radius: 0 4px 4px 0;
+}
+
+.tabs-right > .nav-tabs > li > a:hover,
+.tabs-right > .nav-tabs > li > a:focus {
+    border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+}
+
+.tabs-right > .nav-tabs .active > a,
+.tabs-right > .nav-tabs .active > a:hover,
+.tabs-right > .nav-tabs .active > a:focus {
+    border-color: #ddd #ddd #ddd transparent;
+}
+
+
+.d-ib {
+    display: inline-block;
+}
+
+.d-ib > img {
+    display: inline-block;
+}
+
+#components {
+}
+
+#formBuild {
+}
+
+#formBuild .tab-panel {
+    min-height: 250px;
+}
+
+.popover {
+    /*width: 300px;*/
+    max-width: 600px;
+    color: #000;
+}
+
+
+.popover .form-group > label,
+.modal .form-group > label {
+    margin-top: 7px;
+}
+
+.popover .panel-heading {
+    padding: 3px 15px;
+}
+
+.component {
+    position: relative;
+    padding-top: 10px;
+}
+
+.component,
+.component > * {
+    cursor: pointer !important;
+}
+
+
+.component .settings {
+    display: none;
+}
+
+.form-horizontal.col-2 {
+    width: 500px;
+}
+
+.double-placeholder .form-group.mbn {
+    margin-bottom: 15px;
+}
+
+.double-placeholder > div {
+    min-height: 55px;
+    padding-top: 15px;
+}
+
+#components .double-placeholder > div {
+    min-height: 30px;
+    padding-top: 0;
+}
+
+
+.double-placeholder .panel > div {
+    position: relative;
+}
+
+
+.double-placeholder > div:after {
+}
+
+#formBuild .component .panel-body {
+    padding-top: 25px;
+}
+
+#formBuild .component .settings,
+.component .handler {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #777;
+    cursor: pointer;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-width: 0 0 1px 1px;
+    border-radius: 0 4px 0 4px;
+}
+
+.component .handler {
+    left: 0;
+    top: 0;
+    right: auto;
+    font-size: 14px;
+    border-width: 0 1px 1px  0;
+    border-radius: 4px 0 4px 0;
+}
+
+#formBuild .component .settings:hover {
+    color: #fff;
+    background-color: #2aabd2;
+    border-color: #2aabd2;
+    text-decoration: none;
+}
+
+.no-event {
+    pointer-events: none
+}
+
+#formBuild .component:hover {
+    border-color: #2aabd2;
+}
+
+#components .component:hover {
+    border-color: #2d6ca2;
+}
+
+.component-placeholder {
+    border: 1px dashed #ccc;
+    background: #fcfcfc;
+    margin: 20px 0;
+    height: 20px;
+}
+
+.popover .component-placeholder {
+    margin: 0 0 10px 0;
+}
+
+.ui-sortable-helper,
+.ui-draggable-dragging,
+.ui-sortable-helper {
+    border: 1px solid #ccc;
+    background: #fcfcfc;
+    width: 75px !important;
+    height: 75px !important;
+}
+
+.ui-draggable-dragging {
+}
+
+.ui-sortable-helper {
+}
+
+.ui-sortable-helper > *,
+.ui-draggable-dragging > *,
+.ui-sortable-helper > * {
+    display: none;
+}
+
+.popover .ui-draggable-dragging,
+.popover .ui-sortable-helper{
+    border: none;
+}
+
+/*==========================================*/
+
+.tabs-left li a .title {
+    display: inline-block;
+    max-width: 120px;
+}
+
+/*==========================================*/
+
+.image-sm {
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+}
+
+
+.selectpicker img {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+    display: inline-block;
+}
+
+
+.panel .selectpicker.btn-default {
+    background: #fff;
+}
+
+.mask-popover {
+    position: absolute;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    background: #000;
+    background: rgba(0, 0, 0, .5);
+
+    z-index: 1050;
+}
+
+
+.ptn,
+.pvn,
+.pan {
+    padding-top: 0;
+}
+.ptx,
+.pvx,
+.pax {
+    padding-top: 3px;
+}
+.pts,
+.pvs,
+.pas {
+    padding-top: 5px;
+}
+.ptm,
+.pvm,
+.pam {
+    padding-top: 10px;
+}
+.ptl,
+.pvl,
+.pal {
+    padding-top: 20px;
+}
+.prn,
+.phn,
+.pan {
+    padding-right: 0;
+}
+.prx,
+.phx,
+.pax {
+    padding-right: 3px;
+}
+.prs,
+.phs,
+.pas {
+    padding-right: 5px;
+}
+.prm,
+.phm,
+.pam {
+    padding-right: 10px;
+}
+.prl,
+.phl,
+.pal {
+    padding-right: 20px;
+}
+.pbn,
+.pvn,
+.pan {
+    padding-bottom: 0;
+}
+.pbx,
+.pvx,
+.pax {
+    padding-bottom: 3px;
+}
+.pbs,
+.pvs,
+.pas {
+    padding-bottom: 5px;
+}
+.pbm,
+.pvm,
+.pam {
+    padding-bottom: 10px;
+}
+.pbl,
+.pvl,
+.pal {
+    padding-bottom: 20px;
+}
+.pln,
+.phn,
+.pan {
+    padding-left: 0;
+}
+.plx,
+.phx,
+.pax {
+    padding-left: 3px;
+}
+.pls,
+.phs,
+.pas {
+    padding-left: 5px;
+}
+.plm,
+.phm,
+.pam {
+    padding-left: 10px;
+}
+.pll,
+.phl,
+.pal {
+    padding-left: 20px;
+}
+.mtn,
+.mvn,
+.man {
+    margin-top: 0;
+}
+.mtx,
+.mvx,
+.max {
+    margin-top: 3px;
+}
+.mts,
+.mvs,
+.mas {
+    margin-top: 5px;
+}
+.mtm,
+.mvm,
+.mam {
+    margin-top: 10px;
+}
+.mtl,
+.mvl,
+.mal {
+    margin-top: 20px;
+}
+.mrn,
+.mhn,
+.man {
+    margin-right: 0;
+}
+.mrx,
+.mhx,
+.max {
+    margin-right: 3px;
+}
+.mrs,
+.mhs,
+.mas {
+    margin-right: 5px;
+}
+.mrm,
+.mhm,
+.mam {
+    margin-right: 10px;
+}
+.mrl,
+.mhl,
+.mal {
+    margin-right: 20px;
+}
+.mbn,
+.mvn,
+.man {
+    margin-bottom: 0;
+}
+.mbx,
+.mvx,
+.max {
+    margin-bottom: 3px;
+}
+.mbs,
+.mvs,
+.mas {
+    margin-bottom: 5px;
+}
+.mbm,
+.mvm,
+.mam {
+    margin-bottom: 10px;
+}
+.mbl,
+.mvl,
+.mal {
+    margin-bottom: 20px;
+}
+.mln,
+.mhn,
+.man {
+    margin-left: 0;
+}
+.mlx,
+.mhx,
+.max {
+    margin-left: 3px;
+}
+.mls,
+.mhs,
+.mas {
+    margin-left: 5px;
+}
+.mlm,
+.mhm,
+.mam {
+    margin-left: 10px;
+}
+.mll,
+.mhl,
+.mal {
+    margin-left: 20px;
+}
+
+.clear {
+    clear: both;
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "type": "tab",
+    "id": "selectTab",
+    "title": "Select",
+    "content": [
+      {
+        "type": "select",
+        "template": "selectTemplate",
+        "id": "id",
+        "name": "",
+        "title": "Text select",
+        "multiple": false,
+        "icon": {
+          "name": "Choose ...",
+          "src": ""
+        },
+        "options": [
+          {
+            "name": "One options",
+            "value": 1
+          },
+          {
+            "name": "Two options",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "template": "selectTemplate",
+        "id": "id",
+        "name": "",
+        "title": "Text select",
+        "multiple": true,
+        "icon": {
+          "name": "Choose ...",
+          "src": ""
+        },
+        "options": [
+          {
+            "name": "One options",
+            "value": 1
+          },
+          {
+            "name": "Two options",
+            "value": 2
+          }
+        ]
+      }
+    ]
+  }
+]

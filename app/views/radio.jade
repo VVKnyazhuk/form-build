@@ -1,0 +1,15 @@
+script#radioTemplate(type="text/html")
+  label(data-bind="attr: {for: id}, text: title[ $root.currentLocale() ]")
+  div(data-bind="if: isInline() == false")
+    div(data-bind="foreach: options")
+      .radio
+        label.no-event
+          input(type="radio" data-bind="value: value")
+          span(data-bind="text: name[ $root.currentLocale() ]")
+  div(data-bind="if: isInline() == true")
+    div(data-bind="foreach: options")
+      label.radio-inline.no-event
+        input(type="radio" data-bind="value: value")
+        span(data-bind="text: name[ $root.currentLocale() ]")
+  a.settings(data-bind="popover: {options: { title: 'Edit', placement: 'right', container: 'body', template: popoverTemplate() }, template: 'editCheckboxTemplate', data: $data, templateOptions: { afterRender: $data.buffer } }" href="javascript:void(0);")
+    = 'Edit'

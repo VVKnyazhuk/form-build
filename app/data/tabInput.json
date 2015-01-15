@@ -1,0 +1,37 @@
+[
+  {
+    "type": "tab",
+    "id": "inputTab",
+    "title": "Input",
+    "content": [
+      {
+        "type": "input",
+        "template": "inputTemplate",
+        "id": "id",
+        "name": "",
+        "title": "Text input",
+        "placeholder": "placeholder",
+        "helpText": "",
+        "required": false,
+        "icon": {
+          "name": "Choose ...",
+          "src": ""
+        }
+      },
+      {
+        "type": "textarea",
+        "template": "textareaTemplate",
+        "id": "id",
+        "name": "",
+        "title": "Text textarea",
+        "placeholder": "placeholder",
+        "helpText": "",
+        "required": false,
+        "icon": {
+          "name": "Choose ...",
+          "src": ""
+        }
+      }
+    ]
+  }
+]

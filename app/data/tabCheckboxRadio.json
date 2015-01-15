@@ -1,0 +1,115 @@
+[
+    {
+        "type": "tab",
+        "id": "checkboxTab",
+        "title": "Checkboxes / Radios",
+        "content": [
+            {
+                "type": "checkbox",
+                "template": "checkboxTemplate",
+                "id": "id",
+                "name": "",
+                "title": "Text checkbox",
+                "options": [
+                    {
+                        "name": "One options",
+                        "value": 1
+                    },
+                    {
+                        "name": "Two options",
+                        "value": 2
+                    }
+                ],
+                "isInline": false
+            },
+            {
+                "type": "checkbox",
+                "template": "checkboxTemplate",
+                "id": "id",
+                "name": "",
+                "title": "Text checkbox",
+                "options": [
+                    {
+                        "name": "One options",
+                        "value": 1
+                    },
+                    {
+                        "name": "Two options",
+                        "value": 2
+                    }
+                ],
+                "isInline": true
+            },
+            {
+                "type": "radio",
+                "template": "radioTemplate",
+                "id": "id",
+                "name": "",
+                "title": "Text radio",
+                "options": [
+                    {
+                        "name": "One options",
+                        "value": 1
+                    },
+                    {
+                        "name": "Two options",
+                        "value": 2
+                    }
+                ],
+                "isInline": false
+            },
+            {
+                "type": "radio",
+                "template": "radioTemplate",
+                "id": "id",
+                "name": "",
+                "title": "Text radio",
+                "options": [
+                    {
+                        "name": "One options",
+                        "value": 1
+                    },
+                    {
+                        "name": "Two options",
+                        "value": 2
+                    }
+                ],
+                "isInline": true
+            },
+            {
+                "type": "buttonRadio",
+                "template": "buttonRadioTemplate",
+                "id": "id",
+                "name": "",
+                "title": "Text button radio",
+                "options": [
+                    {
+                        "name": "One options",
+                        "value": 1
+                    },
+                    {
+                        "name": "Two options",
+                        "value": 2
+                    }
+                ]
+            },
+            {
+                "type": "buttonCheckbox",
+                "template": "buttonCheckboxTemplate",
+                "id": "id",
+                "name": "",
+                "title": "Text button checkbox",
+                "options": [
+                    {
+                        "name": "One options",
+                        "value": 1
+                    },
+                    {
+                        "name": "Two options",
+                        "value": 2
+                    }
+                ]
+            }
+        ]
+    }
+]

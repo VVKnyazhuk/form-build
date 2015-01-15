@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+   head
+      include templates/head
+   body
+      header.navbar.navbar-default(role="banner")
+         .container
+            .navbar-header
+               a.navbar-brand(href="#") Form Build
+
+      .container
+         include templates/workspace
+
+      include app/views/tab
+      include app/views/input
+      include app/views/textarea
+      include app/views/placeholder
+      include app/views/select
+      include app/views/checkbox
+      include app/views/radio
+
+      // dev
+      //script(data-main='app/main', src='lib/require/require.js')
+
+      //
+      script(data-main='dist/js/main-built', src='lib/require/require.js')
+

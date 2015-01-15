@@ -1,0 +1,30 @@
+script#placeholderTemplate(type="text/html")
+   .double-placeholder
+      .panel.panel-info.mbn(data-bind="sortable: {data: contentLeft}, css: leftClass")
+         div(data-bind="template: {name: template, data: $data}")
+      .panel.panel-info.mbn(data-bind="sortable: {data: contentRight }, css: rightClass")
+         div(data-bind="template: {name: template, data: $data}")
+   a.settings(data-bind="popover: { options: { title: 'Edit', placement: 'right', container: 'body', template: popoverTemplate() }, template: 'editPlaceholderTemplate', data: $data, templateOptions: { afterRender: $data.buffer } }" href="javascript:void(0);")
+      = 'Edit'
+
+script#editPlaceholderTemplate(type="text/html")
+   .form-horizontal
+      .form-group
+         label.col-xs-12(for="doublePlaceholderRatio")
+            = "Ratio"
+      .form-group
+         .col-xs-12
+            input#doublePlaceholderRatio.form-control.input-sm(type="text" data-bind="value: ratio" name="textinput")
+      .form-group.text-right
+         .col-xs-12
+            button.btn.btn-danger.btn-sm(data-bind="click: $parents[ 2 ].removeItem")
+               = "delete"
+               i.glyphicon.glyphicon-remove
+      hr
+      .form-group.mbn
+         .col-xs-6
+            button.btn.btn-success(type="button" data-dismiss="popover" onclick="popoverHide()")
+               = "Save"
+         .col-xs-6.text-right
+            a.btn.btn-warning(data-bind="click: $parents[ 2 ].cancelChange")
+               = "Cancel"

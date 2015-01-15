@@ -1,0 +1,65 @@
+#tabNew(data-bind="modal: {visible: settingsTab.visibleNew, header: {data: {label: 'Add'}}, body: {name: 'tabTemplate', data: settingsTab}, footer: {data: {action: settingsTab.add, closeLabel: 'Close', primaryLabel: 'add Tab'}}}")
+
+script#tabTemplate(type="text/html")
+   .row.form-group
+      label.col-xs-4(for="tabID")
+         = 'ID'
+      .col-xs-8
+         input#tabID.form-control(type="text" autofocus="" data-bind="value: bufferTab.id")
+   .panel.panel-default
+      .panel-heading
+         .row.form-group.mbn(data-bind="visible: $root.isLocales()")
+            label.col-xs-4(for="locale")
+               = 'Locale'
+            .col-xs-8
+               select.selectpicker.form-control(data-bind="options: $root.locales, value: bufferTab.locale")
+      .panel-body
+         .row.form-group.mbn
+            label.col-xs-4(for="tabTitle")
+               = 'Title'
+            .col-xs-8
+               input#tabTitle.form-control(type="text" data-bind="value: bufferTab.title[ bufferTab.locale() ]")
+   .row.form-group
+      label.col-xs-4(for="icon")
+         = 'Icon'
+      .col-xs-8
+         select.selectpicker.form-control(data-bind="foreach: $root.icons, value: bufferTab.icon")
+            option(data-bind="text: name, value: $data, attr: {'data-content': content()}")
+
+script#editTabTemplate(type="text/html")
+   .form-horizontal
+      .form-group
+         label.col-xs-4(for="tabID")
+            = 'ID'
+         .col-xs-8
+            input#tabID.form-control(type="text" autofocus="" data-bind="value: id")
+      .panel.panel-default
+         .panel-heading
+            .row.form-group.mbn(data-bind="visible: $root.isLocales()")
+               label.col-xs-4(for="local")
+                  = 'Locale'
+               .col-xs-8
+                  select.selectpicker.form-control(data-bind="options: $root.locales, value: locale")
+         .panel-body
+            .row.form-group.mbn
+               label.col-xs-4(for="tabTitle")
+                  = 'Title'
+               .col-xs-8
+                  input#tabTitle.form-control(type="text" data-bind="value: title[ $data.locale() ]")
+      .form-group
+         label.col-xs-4(for="icon")
+            = 'Icon'
+         .col-xs-8
+            select.selectpicker.form-control(data-bind="foreach: $root.icons, value: icon")
+               option(data-bind="text: name, value: $data, attr: {'data-content': content()}")
+      .text-right
+         button.btn.btn-danger(type="button" data-bind="click: $parents[ 1 ].removeTab")
+            = 'Delete'
+      hr
+      .form-group.mbn
+         .col-xs-6
+            button.btn.btn-success(type="button" data-dismiss="popover" onclick="popoverHide()" )
+               = 'Save'
+         .col-xs-6.text-right
+            a.btn.btn-warning(data-bind="click: $parents[ 1 ].cancelChange")
+               = 'Cancel'
